@@ -31,6 +31,34 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="container mt-5"></div>
+    <div class="container mt-5">
+      <div id="app" class="wrapper">
+        <h1 class="text-center">To Do List</h1>
+        <hr />
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Nuova Task"
+            aria-label="Recipient's username"
+            aria-describedby="button-addon2"
+          />
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            id="button-addon2"
+          >
+            Aggiungi
+          </button>
+        </div>
+      </div>
+      <ul class="to-do-list">
+        <li class="task clearfix">
+          <div class="to-do-deled">
+            <i class="fa-solid fa-trash task-bin"></i>
+          </div>
+        </li>
+      </ul>
+    </div>
   </body>
 </html>
