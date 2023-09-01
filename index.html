@@ -31,9 +31,9 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="container mt-5">
-      <div id="app" class="wrapper">
-        <h1 class="text-center">To Do List</h1>
+    <div id="app" class="container mt-5">
+      <div class="wrapper">
+        <h1 class="text-center">{{title}}</h1>
         <hr />
         <div class="input-group mb-3">
           <input
@@ -42,23 +42,33 @@
             placeholder="Nuova Task"
             aria-label="Recipient's username"
             aria-describedby="button-addon2"
+            v-model="newTask.text"
+            @keyUp.enter="addNewTask()"
           />
           <button
             class="btn btn-outline-secondary"
             type="button"
             id="button-addon2"
+            @click="addNewTask()"
           >
             Aggiungi
           </button>
         </div>
+        <ul class="to-do-list" v-if="toDoList.lenght">
+          <li
+            v-for="(toDoTask, i) in toDoList"
+            class="task clearfix"
+            @click="sbarraText()"
+          >
+            <span :class="(todoTask.done) ? 'done' : ''">
+              {{toDoTask.text}}
+            </span>
+            <div @click="deleteTask(i)" class="to-do-deled">
+              <i class="fa-solid fa-trash task-bin"></i>
+            </div>
+          </li>
+        </ul>
       </div>
-      <ul class="to-do-list">
-        <li class="task clearfix">
-          <div class="to-do-deled">
-            <i class="fa-solid fa-trash task-bin"></i>
-          </div>
-        </li>
-      </ul>
     </div>
   </body>
 </html>

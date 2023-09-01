@@ -9,6 +9,10 @@
   background-color: cornsilk;
 }
 
+.done {
+  text-decoration: line-through;
+}
+
 .to-do-deled {
   float: right;
 }
