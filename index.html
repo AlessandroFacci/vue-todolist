@@ -54,13 +54,13 @@
             Aggiungi
           </button>
         </div>
-        <ul class="to-do-list" v-if="toDoList.lenght">
+        <ul class="to-do-list" v-if="toDoList.length">
           <li
             v-for="(toDoTask, i) in toDoList"
             class="task clearfix"
             @click="sbarraText()"
           >
-            <span :class="(todoTask.done) ? 'done' : ''">
+            <span :class="(toDoTask.done) ? 'done' : ''">
               {{toDoTask.text}}
             </span>
             <div @click="deleteTask(i)" class="to-do-deled">
